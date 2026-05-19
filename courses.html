@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cohorts - ElectroVerse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Outfit', 'sans-serif'] },
+                    colors: { primary: '#2563eb', secondary: '#4f46e5', accent: '#e2ff30', background: '#ffffff', surface: '#f8fafc', textMain: '#0f172a', textMuted: '#64748b' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #f8fafc; color: #0f172a; overflow-x: hidden; }
+        .glass-sidebar { background: rgba(255, 255, 255, 0.95); border-right: 1px solid rgba(0,0,0,0.06); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(0,0,0,0.06); border-radius: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); transition: all 0.3s ease; }
+        .glass-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -10px rgba(37,99,235,0.15); border-color: rgba(37,99,235,0.2); }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col text-textMain">
+
+    <header class="fixed top-0 left-0 right-0 z-40 px-6 py-4 bg-white/85 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><i data-lucide="book-open" class="w-4 h-4 text-white"></i></div>
+                <span class="font-display font-bold text-xl tracking-tight text-textMain">Electro<span class="text-primary">Verse</span></span>
+            </a>
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden border-2 border-primary">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User Avatar">
+                </div>
+                <span class="font-bold text-sm hidden sm:block">John Doe</span>
+                <a href="index.html" class="text-gray-400 hover:text-red-500 transition-colors ml-4"><i data-lucide="log-out" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1 pt-20">
+        <!-- Sidebar -->
+        <aside class="hidden md:flex flex-col w-64 glass-sidebar h-[calc(100vh-5rem)] sticky top-20 shrink-0 p-6">
+            <nav class="flex-1 space-y-2">
+                <a href="dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 text-textMuted hover:text-textMain font-medium"><i data-lucide="layout-dashboard" class="w-5 h-5"></i> Overview</a>
+                <a href="courses.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-gray-100 text-primary font-bold"><i data-lucide="book-open" class="w-5 h-5"></i> My Cohorts</a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 text-textMuted hover:text-textMain font-medium"><i data-lucide="clock" class="w-5 h-5"></i> Deadlines</a>
+                <a href="certificates.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 text-textMuted hover:text-textMain font-medium"><i data-lucide="award" class="w-5 h-5"></i> Certificates</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-grow p-6 md:p-10 overflow-y-auto">
+            <div class="max-w-6xl mx-auto space-y-8">
+                
+                <div class="text-left mb-8">
+                    <h1 class="text-3xl font-display font-extrabold mb-2 text-textMain">Active Cohorts</h1>
+                    <p class="text-textMuted font-medium">Manage your active learning roadmaps.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Course 1 -->
+                    <div class="glass-card overflow-hidden group cursor-pointer" onclick="window.location.href='course-details.html'">
+                        <div class="relative h-48 w-full overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 z-20"><span class="px-3 py-1 text-xs font-semibold bg-white/90 backdrop-blur-md rounded-full shadow-sm text-textMain">IoT & Arduino</span></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold font-display mb-2 line-clamp-2 text-textMain group-hover:text-primary transition-colors">Ultimate IoT & Embedded Systems Cohort</h3>
+                            <div class="flex items-center gap-2 text-sm text-textMuted mb-4 font-medium"><i data-lucide="user" class="w-4 h-4"></i><span>ElectroVerse Team</span></div>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-textMuted mb-6 font-medium">
+                                <div class="flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4 text-secondary"></i><span>12 Weeks</span></div>
+                                <div class="flex items-center gap-1"><i data-lucide="star" class="w-4 h-4 text-yellow-500" fill="currentColor"></i><span class="text-textMain">4.9</span></div>
+                            </div>
+                            <button class="w-full py-3 rounded-xl bg-white hover:bg-gray-50 border border-gray-200 text-textMain font-semibold transition-all flex items-center justify-center gap-2 shadow-sm">Resume Learning <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
